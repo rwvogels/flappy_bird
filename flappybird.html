@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="nl">
+    <head>
+        <title>CANVAS</title>
+        
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link href="https://fonts.googleapis.com/css?family=Carter+One" rel="stylesheet">
+        
+        <script type="text/javascript" src="modules/initialise.js"></script>
+        <script type="text/javascript" src="modules/update_speed.js"></script>
+        <script type="text/javascript" src="modules/collision_detection.js"></script>
+        
+        <script type="text/javascript" src="flappybird.js"></script>
+        <style>
+            body {
+                margin: 0; padding: 0; height: 100vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: #242427;
+            }
+            #canvas {
+                width: 100%;
+                height: 100%;
+            }
+            canvas {
+                display: block;
+                background-image: url("images/background.png");
+                background-size: auto 100%;
+                width: 100%;
+                height: 90%;
+            }
+            #canvas_ground {
+                background-image: url("images/ground.png");
+                background-size: auto 100%;
+                width: 100%;
+                height: 10%;
+            }
+            .buttons {
+                position: fixed;
+                top: 5vh;
+                background-size: contain;
+                background-position: center;
+                background-repeat: no-repeat;
+                width: 8.5vh; height: 8.5vh;
+            }
+            #restart_button {  
+                left: 5vw; 
+                background-image: url("images/restart_button.svg");         
+            }
+            #pause_button {
+                right: 5vw;
+                background-image: url("images/pause_button.svg");
+            }
+        </style>
+    </head>
+    <body>
+        <div style="display: none;">
+            <img src="images/bird.png" alt="bird" id="bird">
+            <img src="images/pipe_all.png" alt="pipe_top" id="pipe_top">
+            <img src="images/pipe_all.png" alt="pipe_bottom" id="pipe_bottom">
+        </div>
+        <div id="canvas">
+            <canvas></canvas>
+                <div id="canvas_ground"></div>
+        </div>
+        <div id="restart_button" class="buttons"></div>
+        <div id="pause_button" class="buttons"></div>
+    </body>
+</html>
