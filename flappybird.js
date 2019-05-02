@@ -103,27 +103,11 @@ window.addEventListener("DOMContentLoaded",function() {
         window.requestAnimationFrame(canvas_loop);
     }
     
-    // Set paused.
+    // Set jump.
     window.onkeydown = function(event) {
-        // For PC, pause and restart on spacebar event.
+        // For PC, jump on spacebar event.
         if (event.keyCode === 32) {
-            // If player dies reset the game.
-             if (collision_detection(canvas, playerdata, pilardata)) {
-                 pilardata = canvas_initialise_pilars(canvas, pilars_amount);
-                 playerdata = canvas_initialise_player(canvas);
-                 player_speed = -canvas.height / 70;
-                 points = 0;
-                 canvas_render();
-            }
-            // Pause and unpause the game.
-            game_paused = !game_paused;
-            
-            // Change the graphic.
-            if (game_paused) {
-            document.getElementById("pause_button").style.backgroundImage = "url('images/pause_button.svg')";
-            } else {
-                document.getElementById("pause_button").style.backgroundImage = "url('images/play_button.svg')";
-            }
+            player_speed = -canvas.height / 4 * 0.06;
         }
     }
     // Set player speed.
